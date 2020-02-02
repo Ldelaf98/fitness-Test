@@ -1,5 +1,23 @@
-<%= link_to 'Sign in with Google', '/auth/google_oauth2'%>
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div class = "signin" id="googleimage">
+            <%= link_to image_tag("googlebutton.png"), '/auth/google_oauth2', id: "googleimage" %>
+        </div>
+    </body>
+</html>
 
-<h1> Hi <%= @current_user.name%> </h1>
+
+
+<!-- 
+Sources
+https://www.iphone2lovely.com/wp-content/uploads/2016/05/bodybuilding-hd-wallpapers-1920x1080.jpg  //arnold shwarzenegger conquer
+-->
+
+
+
+<!--unused code snippets-->
+<!--<%= button_to "Google SignIn", "/auth/google_oauth2" %>-->
+<!--<h1 style="color:white;"> Hi <%= @current_user.name%> </h1>-->

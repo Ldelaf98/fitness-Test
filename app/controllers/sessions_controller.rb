@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
   
+  def destroy
+    session[:user_id] = nil
+    redirect_to '/'
+  end
+  
   protected
   
   def auth_hash
