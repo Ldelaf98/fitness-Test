@@ -12,7 +12,7 @@
          <link rel="stylesheet" href="css/aos.css">
          <link rel="stylesheet" href="css/tooplate-gymso-style.css">
     </head>
-    <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+    <body data-spy="scroll" data-target="#navbarNav" data-offset="50" id=clientcontenthomepage>
         <!-- MENU BAR -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
@@ -27,37 +27,28 @@
                             <%=link_to 'Home', "/clientdashboard/index", class:"nav-link smoothScroll"%>
                         </li>
                         <li class="nav-item">
-                            <a href="#about" class="nav-link smoothScroll">About Us</a>
+                            <a href="#about" class="nav-link smoothScroll">Workouts</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#class" class="nav-link smoothScroll">Classes</a>
+                            <a href="#class" class="nav-link smoothScroll">Calculator</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#schedule" class="nav-link smoothScroll">Schedules</a>
+                            <a href="#schedule" class="nav-link smoothScroll">Button4</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#contact" class="nav-link smoothScroll">Contact</a>
+                            <a href="#contact" class="nav-link smoothScroll">Account</a>
                         </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <%= link_to image_tag("logout.png", :size => "50x50"), "/sessions/destroy", id: "weblogout"%>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a style="color:white;"><%=@current_user.name%></a>
+                        <li class="nav-item">
+                            <%= link_to 'Logout', "/sessions/destroy", id: "weblogout", class: "nav-link smoothScroll"%>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="bg-overlay"></div>
-        <div id = clientcontenthomepage>
-            <h1>Healthy Singapore</h1>
-            <h2>Fitness Tracker</h2>
-            <a>Get started</a>
-            <a>learn more</a>
+        <div id=chomecontents>
+            <h2>Hello <%=@current_user.name.split.first%></h2>
+            <h3>Fitness Tracker</h3>
         </div>
     </body>
 </html>

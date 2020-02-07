@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #clientcontenthomepage {
+    background: image-url('scenic.jpg');
+    background-size: cover; 
+}
+
+#chomecontents {
     position: fixed;
     top: 10%;
+    color: white;
 }
