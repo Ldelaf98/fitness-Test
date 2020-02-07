@@ -8,24 +8,27 @@ body {
 }
 
 div.signin {
-    // position: relative;
-    // left: 300px;
-    // border: 3px solid #73AD21;
     position: fixed;
     bottom: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-img {
-    width: 250px;
+div.logout {
+    position: fixed;
+    top: 1%;
+    left: 1%;
 }
+
+// img {
+//     width: 250px;
+// }
 
 #googleimage {
   border: 0px solid #ddd;
   border-radius: 0px;
   padding: 0px;
-  width: 150px;
+  width: 250px;
 }
 
 #googleimage:hover {
