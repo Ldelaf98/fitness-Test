@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_or_create_by(name: auth_hash.info.name)
     session[:user_id] = @user.id
-    redirect_to '/'
+    redirect_to '/clientdashboard/index'
   end
   
   def destroy
