@@ -2,9 +2,20 @@
     <head>
     </head>
     <body>
-        <div class = "signin" id="googleimage">
-            <%= link_to image_tag("googlebutton.png"), '/auth/google_oauth2', id: "googleimage" %>
-        </div>
+        <% if @current_user %>
+            <div class = "logout" id="weblogout">
+                <h1 style="color:white;">
+                    <%= link_to image_tag("logout.png", :size => "50x50"), "/sessions/destroy", id: "weblogout" %>
+                </h1>
+            <h1 style="color:white;">
+                Signed in as <strong><%= @current_user.name %></strong>!
+            </h1>  
+            </div>
+        <% else %>
+            <div class = "signin" id="googleimage">
+                <%= link_to image_tag("googlebutton.png", :size => "250x50"), '/auth/google_oauth2', id: "googleimage" %>
+            </div>
+        <% end %>
     </body>
 </html>
 
