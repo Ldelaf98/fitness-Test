@@ -1,9 +1,9 @@
-require 'test_helper'
+# require 'test_helper'
 
-class ClientdashboardControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get clientdashboard_index_url
-    assert_response :success
-  end
+# class ClientdashboardControllerTest < ActionDispatch::IntegrationTest
+#   test "should get index" do
+#     get clientdashboard_index_url
+#     assert_response :success
+#   end
 
-end
+# end
