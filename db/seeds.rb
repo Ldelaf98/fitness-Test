@@ -19,20 +19,20 @@ units = [{name: "lbs", category: "Strength"},
      Unit.create(unit)
  end
 
-workouts = [{"name": "Abs", "user_id": "1", "state": State.saved, "uid": "0"},
-            {"name": "Legs", "user_id": "0", "state": State.saved, "uid": "1"}
-            ]
+# workouts = [{"name": "Abs", "user_id": "1", "state": State.saved, "uid": "0"},
+#             {"name": "Legs", "user_id": "0", "state": State.saved, "uid": "1"}
+#             ]
 
-workouts.each do |workout|
-    tmp = Workout.create(workout)
+# workouts.each do |workout|
+#     tmp = Workout.create(workout)
     
-    t_tmp = Task.create("exercise_id": "1", "state": State.saved, "workout_id": tmp.id)
-    t_tmp2 = Task.create("exercise_id": "2", "state": State.saved, "workout_id": tmp.id)
+#     t_tmp = Task.create("exercise_id": "1", "state": State.saved, "workout_id": tmp.id)
+#     t_tmp2 = Task.create("exercise_id": "2", "state": State.saved, "workout_id": tmp.id)
     
-    ExerciseSet.create("rep_count": "25", "rep_value": "30", "rep_unit": "lbs", "state": State.saved, "task_id": t_tmp.id)
-    ExerciseSet.create("rep_count": "10", "rep_value": "50", "rep_unit": "lbs", "state": State.saved, "task_id": t_tmp2.id)
+#     ExerciseSet.create("rep_count": "25", "rep_value": "30", "rep_unit": "lbs", "state": State.saved, "task_id": t_tmp.id)
+#     ExerciseSet.create("rep_count": "10", "rep_value": "50", "rep_unit": "lbs", "state": State.saved, "task_id": t_tmp2.id)
     
-end
+# end
                 
 exercises = [   {"name": "Bench Press", "category": "Strength", "description": "Strength exercise to build your chest.",   "user_id": "1"},
                 {"name": "Squat",       "category": "Strength", "description": "Strength exercise to build your glutes.",  "user_id": "1"},
@@ -43,15 +43,15 @@ end
 
 # Development seed data
 # if Rails.env.development? then
-    users = [ {"provider" => "none", "uid" => "-1", "name" => "Charlie", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
-              {"provider" => "none", "uid" => "-1", "name" => "Timothy", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
-              {"provider" => "none", "uid" => "-1", "name" => "Courtney", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
-              {"provider" => "none", "uid" => "-1", "name" => "Cassandra", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
-              {"provider" => "none", "uid" => "-1", "name" => "Tayik", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"}]
+    # users = [ {"provider" => "none", "uid" => "-1", "name" => "Charlie", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
+    #           {"provider" => "none", "uid" => "-1", "name" => "Timothy", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
+    #           {"provider" => "none", "uid" => "-1", "name" => "Courtney", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
+    #           {"provider" => "none", "uid" => "-1", "name" => "Cassandra", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"},
+    #           {"provider" => "none", "uid" => "-1", "name" => "Tayik", "oauth_token" => "none", "oauth_expires_at" => "January 1, 1753"}]
     
-    users.each do | user |
-        User.create(user)
-    end
+    # users.each do | user |
+    #     User.create(user)
+    # end
     
     client_trainer_relations = [ {"client_id" => 1, "trainer_id" => 2},
                                 {"client_id" => 4, "trainer_id" => 2},

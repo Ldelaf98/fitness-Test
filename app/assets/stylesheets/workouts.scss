@@ -1,13 +1,13 @@
-// Place all the styles related to the clientdashboard controller here.
+// Place all the styles related to the Workouts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#clientcontenthomepage {
-    background: image-url('scenic.jpg');
+#workoutpage {
+    background: image-url('gymroom.jpg');
     background-size: cover; 
 }
 
-#chomecontents {
+#workoutcontents {
     position: fixed;
     top: 10%;
     color: white;
