@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'calculators/index'
   get 'clientdashboard/index'
   get 'sessions/create'
   get '/auth/:provider/callback', to:'sessions#create'

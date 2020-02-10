@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <title>Healthy Singapore</title>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+         <meta name="description" content="">
+         <meta name="keywords" content="">
+         <meta name="author" content="">
+         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+         <link rel="stylesheet" href="bootstrap.min.css">
+         <link rel="stylesheet" href="aos.css">
+         <link rel="stylesheet" href="tooplate-gymso-style.css">
+         <script type="text/javascript">
+            function computeBMI()
+            {
+                //Obtain user inputs
+                var height=Number(document.getElementById("height").value);
+                var heightunits=document.getElementById("heightunits").value;
+                var weight=Number(document.getElementById("weight").value);
+                var weightunits=document.getElementById("weightunits").value;
+    
+    
+                //Convert all units to metric
+                if (heightunits=="inches") height/=39.3700787;
+                if (weightunits=="lb") weight/=2.20462;
+    
+                //Perform calculation
+                var BMI=weight/Math.pow(height,2);
+    
+                //Display result of calculation
+                document.getElementById("output").innerText=Math.round(BMI*100)/100;
+    
+                if (output<18.5)
+                document.getElementById("comment").value = "Underweight";
+                if (output>=18.5 && output<=25)
+                document.getElementById("comment").value = "Normal";
+                if (output>=25 && output<=30)
+                document.getElementById("comment").value = "Obese";
+                if (output>30)
+                document.getElementById("comment").value = "Overweight";
+                document.getElementById("answer").value = output; 
+            }
+        </script>
+    </head>
+    <body data-spy="scroll" data-target="#navbarNav" data-offset="50" id=calculatorpage>
+        <!-- MENU BAR -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Healthy Singapore</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item">
+                            <%=link_to 'Home', "/clientdashboard/index", class:"nav-link smoothScroll"%>
+                        </li>
+                        <li class="nav-item">
+                            <%=link_to 'Workouts', "/workouts", class:"nav-link smoothScroll" %>
+                        </li>
+                        <li class="nav-item">
+                            <%=link_to 'Calculator', "/calculators/index", class:"nav-link smoothScroll"%>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#schedule" class="nav-link smoothScroll">Button4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link smoothScroll">Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to 'Logout', "/sessions/destroy", id: "weblogout", class: "nav-link smoothScroll"%>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="bg-overlay"></div>
+        <div id=calculatorcontents>
+            <h1>BMI Calculator</h1>
+            Enter your Height: 
+            <br> 
+            <input type="text" id="height"/>
+                <select type="multiple" id="heightunits" class="button">
+                    <option value="metres" selected="selected">metres</option>
+                    <option value="inches">inches</option>
+                </select>
+            <br><br>
+            Enter your Weight: 
+            <br>
+            <input type="text" id="weight"/>
+                <select type="multiple" id="weightunits" class="button">
+                    <option value="kg" selected="selected">kilograms</option>
+                    <option value="lb">pounds</option>
+                </select>
+            <br><br>
+            <input type="submit" value="Calculate" onclick="computeBMI();" class="button">
+            <br><br>
+            <h3>Your BMI is: <span id="output"></span></h3>
+            <!--<h4>This means you are: <span id="answer"></span></h4> -->
+        </div>
+    </body>
+</html>
