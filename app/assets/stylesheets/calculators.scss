@@ -1,0 +1,27 @@
+// Place all the styles related to the calculators controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#calculatorpage {
+    background: image-url('healthy.jpg');
+    background-size: cover; 
+}
+
+#calculatorcontents {
+    position: fixed;
+    top: 10%;
+    color: white;
+}
+
+.button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
