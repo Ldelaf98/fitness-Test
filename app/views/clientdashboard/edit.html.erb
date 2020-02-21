@@ -12,7 +12,7 @@
          <link rel="stylesheet" href="aos.css">
          <link rel="stylesheet" href="tooplate-gymso-style.css">
     </head>
-    <body data-spy="scroll" data-target="#navbarNav" data-offset="50" id=clientcontenthomepage>
+    <body data-spy="scroll" data-target="#navbarNav" data-offset="50" id=workoutpage>
         <!-- MENU BAR -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
@@ -46,11 +46,29 @@
             </div>
         </nav>
         <div class="bg-overlay"></div>
-        <div id=chomecontents>
-            <h2>Hello <%=@current_user.name.split.first%></h2>
-            <h3>Fitness Tracker</h3>
-            <h3>Goals:</h3>
-            <%= button_to "Add Goal", '/clientdashboard/new', class: "button"%>
+        <div id=Goalcontents>
+            <%= form_with scope: :goal, url: clientdashboard_path, local: true do |form| %>
+                <% if @goal.errors.any? %>
+                    <div id="error_explanation">
+                        <h2>
+                            <%= pluralize(@goal.errors.count, "error") %> prohibited
+                            this goal from being saved:
+                        </h2>
+                        <ul>
+                            <% @goal.errors.full_messages.each do |msg| %>
+                                <li><%= msg %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
+                <h1>Edit Goal</h1>
+                <%= form.label :title, 'Goal Title'%><br>
+                <%= form.text_field :title %><br>
+                <%= form.label :desc, 'Goal Description' %><br>
+                <%= form.text_area :desc %><br>
+                <%= form.submit class: "button"%>
+                <%= link_to 'Cancel', clientdashboard_path, class: "button" %>
+            <% end %>
         </div>
     </body>
 </html>
